@@ -2,788 +2,417 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue chez GTGEST SARL - Votre partenaire suisse en gestion stratégique</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="GTGEST SARL - Votre partenaire suisse en gestion stratégique, conseil financier, immobilier et mobilité internationale.">
+    <meta name="keywords" content="GTGEST, gestion stratégique, conseil financier Valais, analyse fiscale, immobilier suisse, Gabriele Tufo, Gabriel Tufo, Vétroz, 1963, fiduciaire">
+    <title>GTGEST SARL — Votre Partenaire Suisse en Gestion Stratégique</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    
     <style>
-        /* Reset et styles de base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+        :root { --primary: #1e40af; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: #1e293b; }
+        h1, h2, h3, h4, h5 { font-family: 'Poppins', sans-serif; font-weight: 600; }
+        
+        header { 
+            position: fixed; top: 0; left: 0; right: 0; 
+            background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.1); z-index: 1000; 
         }
-        body {
-            background-color: #f4f7fa;
-            color: #333;
-            line-height: 1.6;
+        nav { 
+            max-width: 1400px; margin: 0 auto; padding: 1rem 5%; 
+            display: flex; justify-content: space-between; align-items: center; 
         }
-        /* Header */
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .logo { font-size: 1.85rem; font-weight: 800; color: var(--primary); }
+        .nav-links { display: flex; gap: 2.5rem; }
+        .nav-links a { font-weight: 500; color: #1e293b; text-decoration: none; }
+        .burger { display: none; font-size: 1.9rem; cursor: pointer; color: var(--primary); }
+        
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; 
+            text-align: center; color: white; padding: 0 5%;
         }
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .hero h1 { font-size: clamp(2.3rem, 7vw, 3.8rem); margin-bottom: 1rem; }
+        
+        .btn-primary { 
+            background: var(--primary); color: white; padding: 18px 40px; 
+            border-radius: 50px; font-weight: 600; font-size: 1.1rem; 
         }
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
+        section { padding: 90px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-title { 
+            text-align: center; font-size: clamp(2rem, 6vw, 2.8rem); 
+            margin-bottom: 3rem; color: var(--primary); 
         }
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
+        
+        .card-work { 
+            background: #f8fafc; border-radius: 18px; overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: transform 0.3s; 
         }
-        nav ul {
-            list-style: none;
-            display: flex;
-            margin-top: 10px;
-            justify-content: center;
+        .card-work:hover { transform: translateY(-8px); }
+        .card-img-top { height: 210px; object-fit: cover; }
+        
+        .process-list { 
+            counter-reset: step; padding: 0; list-style: none; 
+            max-width: 820px; margin: 0 auto; 
         }
-        nav ul li {
-            margin: 0 15px;
+        .process-item { 
+            counter-increment: step; display: flex; align-items: center; 
+            margin-bottom: 1.6rem; font-size: 1.08rem; 
         }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
+        .process-item::before { 
+            content: counter(step); width: 48px; height: 48px; background: var(--primary); 
+            color: white; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; font-weight: 700; margin-right: 1.2rem; flex-shrink: 0; 
         }
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-        #language-select {
-            background-color: #004080;
-            color: white;
-            border: 1px solid white;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        /* Hero Section */
-        #hero {
-            background: linear-gradient(to bottom, #004080, #00bfff);
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 150px 20px 150px;
-            margin-top: 60px;
-        }
-        #hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        #hero .subtitle {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        #hero .description {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
-            text-align: justify;
-        }
-        .btn {
-            background-color: #004080;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background-color: #003366;
-        }
-        /* Sections Générales */
-        section {
-            padding: 80px 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #004080;
-        }
-        .section-spacer {
-            margin-top: 60px;
-        }
-        .service {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            flex: 0 1 350px;
-            max-width: 350px;
-        }
-        .service:hover {
-            transform: translateY(-5px);
-        }
-        .service h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #004080;
-            display: flex;
-            align-items: center;
-        }
-        .service h3 span {
-            margin-left: 10px;
-        }
-        .service p {
-            font-size: 16px;
-            text-align: justify;
-        }
-        /* Flex pour les services */
-        .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        /* Contact Section */
-        #contact {
-            background-color: #fff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 40px;
-        }
-        #contact p {
-            text-align: center;
-            font-size: 18px;
-        }
-        /* Footer */
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 40px;
-        }
-        footer p {
-            margin-bottom: 10px;
-        }
-        footer a {
-            color: #ffcc00;
-            text-decoration: none;
-        }
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                align-items: flex-start;
+        
+        #contact .contact-box { max-width: 420px; margin: 0 auto; text-align: center; }
+        
+        @media (max-width: 900px) {
+            .burger { display: block; }
+            .nav-links {
+                position: absolute; top: 100%; left: 0; width: 100%; background: white;
+                flex-direction: column; max-height: 0; overflow: hidden; 
+                transition: max-height 0.4s ease; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
-            .top-bar {
-                width: 100%;
-                justify-content: space-between;
-            }
-            nav {
-                width: 100%;
-            }
-            nav ul {
-                margin-top: 10px;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                padding-left: 0;
-            }
-            nav ul li {
-                margin: 5px 10px 5px 0;
-            }
-            #hero {
-                padding: 100px 20px 100px;
-            }
-            #hero h1 {
-                font-size: 36px;
-            }
-            #hero .subtitle {
-                font-size: 20px;
-            }
-            #hero .description {
-                font-size: 16px;
-            }
-            .service {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-            .section-spacer {
-                margin-top: 40px;
-            }
+            .nav-links.active { max-height: 500px; }
+            .nav-links a { padding: 1.2rem; text-align: center; border-bottom: 1px solid #eee; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
+    <!-- Navbar -->
     <header>
-        <div class="header-container">
-            <div class="top-bar">
-                <div class="logo">GTGEST SARL</div>
-                <select id="language-select">
-                    <option value="fr">FR</option>
-                    <option value="en">EN</option>
-                    <option value="de">DE</option>
-                    <option value="it">IT</option>
-                </select>
+        <nav>
+            <div class="logo" data-lang="logo">GTGEST SARL</div>
+            <div class="burger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+            <div class="nav-links" id="navLinks">
+                <a href="#why" data-lang="nav_why">Pourquoi nous</a>
+                <a href="#services" data-lang="nav_services">Services</a>
+                <a href="#process" data-lang="nav_process">Processus</a>
+                <a href="#about" data-lang="nav_about">À propos</a>
+                <a href="#contact" data-lang="nav_contact">Contact</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#hero" data-lang="home">Accueil</a></li>
-                    <li><a href="#services" data-lang="services">Services</a></li>
-                    <li><a href="#contact" data-lang="contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+            <select id="language-select" onchange="changeLanguage()" class="form-select" style="width:auto;">
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+                <option value="de">DE</option>
+                <option value="it">IT</option>
+            </select>
+        </nav>
     </header>
 
-    <!-- Hero Section with Integrated Description -->
-    <section id="hero">
-        <div class="container">
-            <h1 data-lang="welcome">Bienvenue chez GTGEST SARL</h1>
-            <div class="subtitle" data-lang="partner">Votre partenaire suisse en gestion stratégique</div>
-            <p class="description" data-lang="description">GTGEST SARL est une société suisse spécialisée dans la gestion d'actifs et la facilitation de transactions internationales depuis 2021.</p>
-            <a href="#services" class="btn" data-lang="discover">Découvrez nos services</a>
+    <!-- Hero -->
+    <section class="hero">
+        <div>
+            <h1 data-lang="hero_title">Le partenaire stratégique dont votre entreprise a besoin</h1>
+            <p class="lead" data-lang="hero_subtitle">Gestion d’actifs, analyse financière, immobilier, sécurité économique et mobilité internationale en Suisse.</p>
+            <a href="#contact" class="btn btn-primary btn-lg" data-lang="hero_cta">Demander un entretien</a>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Pourquoi -->
+    <section id="why" class="bg-light">
+        <h2 class="section-title" data-lang="why_title">Pourquoi choisir GTGEST SARL ?</h2>
+        <div class="row g-5 text-center">
+            <div class="col-md-4">
+                <i class="bi bi-shield-check display-1 text-primary mb-3"></i>
+                <h3 data-lang="why1">Expertise Suisse</h3>
+                <p data-lang="why1_desc">Connaissance approfondie des réglementations suisses et internationales.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-graph-up display-1 text-primary mb-3"></i>
+                <h3 data-lang="why2">Approche Stratégique</h3>
+                <p data-lang="why2_desc">Solutions sur mesure pour optimiser performance et rentabilité.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-globe display-1 text-primary mb-3"></i>
+                <h3 data-lang="why3">Réseau International</h3>
+                <p data-lang="why3_desc">Partenaires de confiance dans plusieurs pays.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
     <section id="services">
-        <div class="container">
-            <h2 data-lang="activities">Nos Activités</h2>
-            <!-- Gestion stratégique & organisation -->
-            <h2 data-lang="strategic_management">Gestion stratégique & organisation</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>🔍 <span data-lang="performance_diagnosis">Diagnostic de performance</span></h3>
-                    <p data-lang="performance_diagnosis_desc">Ce processus implique une évaluation complète de l'efficacité organisationnelle, en analysant les processus opérationnels, la structure hiérarchique, la culture d'entreprise et les performances financières. L'objectif est d'identifier les points de friction, les inefficacités et les opportunités d'amélioration. Les consultants utilisent des outils d'analyse avancés pour fournir des recommandations concrètes visant à optimiser la performance globale de l'entreprise.</p>
-                </div>
-                <div class="service">
-                    <h3>🔄 <span data-lang="admin_flow_optimization">Optimisation des flux administratifs</span></h3>
-                    <p data-lang="admin_flow_optimization_desc">Cette démarche consiste à revoir et à rationaliser les processus administratifs internes, tels que la gestion des documents, la communication inter-départements et les procédures de prise de décision. L'objectif est de réduire les délais, minimiser les erreurs et améliorer la collaboration interne, souvent en intégrant des solutions technologiques adaptées.</p>
-                </div>
-                <div class="service">
-                    <h3>🏢 <span data-lang="company_creation">Création ou restructuration de sociétés (Sàrl, SA, holdings)</span></h3>
-                    <p data-lang="company_creation_desc">Les services incluent l'accompagnement dans le choix de la structure juridique la plus appropriée en fonction des objectifs fiscaux, patrimoniaux et opérationnels de l'entreprise. Cela peut comprendre la création de nouvelles entités, la fusion, la scission ou la mise en place de holdings pour optimiser la gestion des actifs et la fiscalité.</p>
-                </div>
-                <div class="service">
-                    <h3>👔 <span data-lang="interim_management">Management intérimaire (CFO, COO externalisé)</span></h3>
-                    <p data-lang="interim_management_desc">Les experts externes interviennent pour gérer temporairement des fonctions clés telles que le directeur financier (CFO) ou le directeur des opérations (COO). Ils apportent une expertise spécialisée pour gérer des périodes de transition, des projets spécifiques ou des situations de crise, assurant ainsi la continuité et la performance de l'entreprise.</p>
-                </div>
-                <div class="service">
-                    <h3>🔧 <span data-lang="change_management">Conduite du changement</span></h3>
-                    <p data-lang="change_management_desc">Ce service accompagne les entreprises dans la gestion des transformations organisationnelles, technologiques ou culturelles. Il comprend la planification du changement, la communication interne, la formation des employés et le suivi post-implémentation pour assurer une adoption réussie des nouvelles pratiques.</p>
+        <h2 class="section-title" data-lang="services_title">Nos Services</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card-work h-100">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978" class="card-img-top" alt="Gestion Stratégique">
+                    <div class="card-body">
+                        <h4 data-lang="service1">Gestion Stratégique</h4>
+                        <p data-lang="service1_desc">Diagnostic, optimisation des processus, création et restructuration de sociétés.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Conseil financier, comptable & fiduciaire -->
-            <h2 class="section-spacer" data-lang="financial_advice">Conseil financier, comptable & fiduciaire</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>📚 <span data-lang="accounting">Tenue comptable (normes suisses et internationales)</span></h3>
-                    <p data-lang="accounting_desc">Les services incluent la gestion quotidienne de la comptabilité, la préparation des états financiers conformément aux normes suisses (Swiss GAAP FER) et internationales (IFRS), ainsi que la consolidation des comptes pour les groupes internationaux. Cela garantit la transparence financière et la conformité réglementaire.</p>
-                </div>
-                <div class="service">
-                    <h3>💰 <span data-lang="tax_optimization">Optimisation fiscale (avec partenaires spécialisés)</span></h3>
-                    <p data-lang="tax_optimization_desc">Les experts fiscaux analysent la situation de l'entreprise pour identifier des stratégies permettant de réduire la charge fiscale, telles que le choix de la structure juridique, l'utilisation de crédits d'impôt, la planification successorale et l'optimisation des flux transfrontaliers.</p>
-                </div>
-                <div class="service">
-                    <h3>📊 <span data-lang="financial_forecasts">Prévisionnels financiers, budgets, indicateurs stratégiques</span></h3>
-                    <p data-lang="financial_forecasts_desc">Ce service comprend l'élaboration de prévisions financières basées sur des analyses de marché, la création de budgets détaillés et la mise en place d'indicateurs de performance clés (KPI) pour suivre la rentabilité, la liquidité et la solvabilité de l'entreprise.</p>
-                </div>
-                <div class="service">
-                    <h3>🧾 <span data-lang="account_consolidation">Consolidation de comptes</span></h3>
-                    <p data-lang="account_consolidation_desc">Les experts en consolidation préparent des états financiers consolidés pour les groupes de sociétés, en intégrant les résultats financiers des filiales et en éliminant les transactions intra-groupe, conformément aux normes comptables applicables.</p>
-                </div>
-                <div class="service">
-                    <h3>🏦 <span data-lang="investment_structures">Création de structures d’investissement</span></h3>
-                    <p data-lang="investment_structures_desc">Les services incluent la conception de structures juridiques et fiscales adaptées aux objectifs d'investissement, telles que des fonds d'investissement, des sociétés de gestion ou des holdings, permettant une gestion optimisée des actifs et une réduction des risques.</p>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-work h-100">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" class="card-img-top" alt="Conseil Financier">
+                    <div class="card-body">
+                        <h4 data-lang="service2">Conseil Financier &amp; Comptable</h4>
+                        <p data-lang="service2_desc">Tenue comptable, optimisation fiscale, prévisionnels et consolidation.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Immobilier & gestion d’actifs -->
-            <h2 class="section-spacer" data-lang="real_estate">Immobilier & gestion d’actifs</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>🏘️ <span data-lang="real_estate_due_diligence">Due diligence immobilière</span></h3>
-                    <p data-lang="real_estate_due_diligence_desc">Ce processus d'audit approfondi évalue la valeur, l'état juridique, les risques environnementaux et les perspectives de rentabilité d'un bien immobilier avant une acquisition ou une vente. Il inclut également l'analyse des baux, des charges et des obligations réglementaires.</p>
-                </div>
-                <div class="service">
-                    <h3>🛠️ <span data-lang="project_monitoring">Suivi de projets de rénovation ou construction</span></h3>
-                    <p data-lang="project_monitoring_desc">Les services comprennent la gestion de projet, la coordination des entrepreneurs, le contrôle des coûts et des délais, ainsi que la conformité aux normes de construction et de sécurité, assurant ainsi la réussite des projets immobiliers.</p>
-                </div>
-                <div class="service">
-                    <h3>📈 <span data-lang="portfolio_optimization">Optimisation de portefeuille immobilier</span></h3>
-                    <p data-lang="portfolio_optimization_desc">Les experts analysent le portefeuille immobilier existant pour identifier des opportunités d'amélioration, telles que la vente de biens sous-performants, l'acquisition de nouveaux actifs ou la rénovation pour augmenter la valeur locative, tout en diversifiant les risques.</p>
-                </div>
-                <div class="service">
-                    <h3>🌍 <span data-lang="cross_border_tax">Fiscalité immobilière transfrontalière</span></h3>
-                    <p data-lang="cross_border_tax_desc">Ce service offre des conseils sur les implications fiscales des investissements immobiliers internationaux, y compris les conventions fiscales, les taxes sur les plus-values, les droits de succession et les stratégies de planification fiscale transfrontalière.</p>
-                </div>
-                <div class="service">
-                    <h3>💸 <span data-lang="passive_income">Mise en place de revenus passifs via la location</span></h3>
-                    <p data-lang="passive_income_desc">Les services incluent l'identification de biens immobiliers générant des revenus locatifs stables, la gestion des baux, la sélection des locataires et l'optimisation des rendements, permettant ainsi de créer des flux de revenus passifs pour l'investisseur.</p>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-work h-100">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" class="card-img-top" alt="Immobilier">
+                    <div class="card-body">
+                        <h4 data-lang="service3">Immobilier &amp; Actifs</h4>
+                        <p data-lang="service3_desc">Due diligence, optimisation de portefeuille, suivi de projets.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Secteur hôtelier & para-hôtelier -->
-            <h2 class="section-spacer" data-lang="hospitality_sector">Secteur hôtelier & para-hôtelier</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>📈 <span data-lang="margin_optimization">Optimisation des marges et de l’occupation</span></h3>
-                    <p data-lang="margin_optimization_desc">Ce service utilise des techniques de revenue management et des outils d’analyse prédictive pour maximiser les revenus par chambre disponible (RevPAR). Cela inclut : La segmentation client fine pour adapter les offres tarifaires, La gestion dynamique des prix selon la demande et la saisonnalité, La formation des équipes de vente à la gestion proactive des réservations. Objectif : améliorer durablement la rentabilité et l’efficacité commerciale.</p>
-                </div>
-                <div class="service">
-                    <h3>✅ <span data-lang="compliance">Mise en conformité (sécurité, normes hôtelières)</span></h3>
-                    <p data-lang="compliance_desc">Un audit complet est mené sur les installations et procédures de l’établissement afin d’assurer la conformité avec : Les normes de sécurité incendie, hygiène et accessibilité, La réglementation locale sur le travail, les assurances, la protection des données, Les normes spécifiques aux labels hôteliers (ex. : Swiss Quality, Relais & Châteaux). Le service inclut également l’accompagnement dans les démarches administratives et les mises à jour régulières selon les évolutions légales.</p>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-work h-100">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" class="card-img-top" alt="Hôtellerie">
+                    <div class="card-body">
+                        <h4 data-lang="service4">Secteur Hôtelier</h4>
+                        <p data-lang="service4_desc">Optimisation des marges, conformité et revenue management.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Sécurité économique & intelligence d’affaires -->
-            <h2 class="section-spacer" data-lang="economic_security">Sécurité économique & intelligence d’affaires</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>🔎 <span data-lang="background_checks">Vérification d’antécédents (personnes et entreprises)</span></h3>
-                    <p data-lang="background_checks_desc">Cette prestation vise à limiter les risques de réputation ou de fraude avant un partenariat, un recrutement ou une acquisition. Cela inclut : Recherche de litiges passés, casiers judiciaires, sanctions, Évaluation de la stabilité financière, Analyse de la présence digitale, des relations d’affaires et de l’historique professionnel. Elle est particulièrement utile pour les investissements à l’international, dans des marchés à faible transparence.</p>
-                </div>
-                <div class="service">
-                    <h3>⚠️ <span data-lang="fraud_prevention">Prévention des fraudes</span></h3>
-                    <p data-lang="fraud_prevention_desc">Le service consiste à : Mettre en place des contrôles internes solides, Cartographier les risques de fraude (internes ou externes), Former les équipes aux signaux d’alerte et aux bonnes pratiques, Mettre en œuvre des systèmes de signalement et des audits préventifs. Objectif : protéger l’entreprise contre les détournements de fonds, les escroqueries ou la corruption.</p>
-                </div>
-                <div class="service">
-                    <h3>🕵️ <span data-lang="reputation_investigations">Enquêtes de réputation et solvabilité</span></h3>
-                    <p data-lang="reputation_investigations_desc">Ces enquêtes permettent de vérifier l’intégrité et la solidité financière d’un partenaire ou d’une cible d’acquisition. Elles comprennent : L’analyse de solvabilité (score de crédit, dettes, paiements fournisseurs), L’enquête de réputation (presse, réseaux sociaux, sources locales), Les entretiens de vérification avec des tiers de confiance. Résultat : une prise de décision sécurisée, fondée sur des faits concrets.</p>
-                </div>
-                <div class="service">
-                    <h3>🧠 <span data-lang="pre_acquisition_due_diligence">Due diligence pré-acquisition</span></h3>
-                    <p data-lang="pre_acquisition_due_diligence_desc">La due diligence approfondie couvre les aspects juridiques, financiers, opérationnels, fiscaux, RH et commerciaux d’une entreprise cible : Analyse des contrats, litiges, actifs, dettes et engagements, Évaluation des performances passées et des projections, Recommandations sur la valorisation et les ajustements à négocier. But : éviter les mauvaises surprises post-acquisition et ajuster le prix ou les clauses contractuelles.</p>
-                </div>
-                <div class="service">
-                    <h3>🛡️ <span data-lang="information_protection">Stratégie de protection de l’information</span></h3>
-                    <p data-lang="information_protection_desc">Face aux menaces croissantes (cyberattaques, espionnage industriel, fuites internes), ce service permet : L’audit des systèmes d’information, La mise en place de protocoles de cybersécurité (chiffrement, accès restreints, sauvegardes), La sensibilisation du personnel à la sécurité numérique, La gestion de crise en cas de violation de données.</p>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-work h-100">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3" class="card-img-top" alt="Sécurité">
+                    <div class="card-body">
+                        <h4 data-lang="service5">Sécurité Économique</h4>
+                        <p data-lang="service5_desc">Due diligence, prévention des fraudes, vérifications d’antécédents.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Mobilité internationale & support aux expatriés -->
-            <h2 class="section-spacer" data-lang="international_mobility">Mobilité internationale & support aux expatriés</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>🌍 <span data-lang="non_resident_companies">Création de sociétés pour non-résidents</span></h3>
-                    <p data-lang="non_resident_companies_desc">Ce service aide les entrepreneurs et investisseurs étrangers à créer des entités légales (Sàrl, SA, succursales) dans un pays tiers, avec : L’analyse fiscale comparative (pays d’origine vs. pays d’implantation), La gestion des démarches administratives et bancaires, L’enregistrement auprès des autorités fiscales et sociales.</p>
-                </div>
-                <div class="service">
-                    <h3>🌐 <span data-lang="international_entrepreneurs_advice">Conseil aux entrepreneurs internationaux</span></h3>
-                    <p data-lang="international_entrepreneurs_advice_desc">Un accompagnement stratégique est proposé pour : Définir une structure juridique et fiscale optimale, Comprendre les obligations comptables, douanières, sociales locales, Accéder à des réseaux de partenaires fiables (avocats, notaires, banquiers), Naviguer les régulations internationales (embargos, conformité, TVA intracommunautaire…).</p>
-                </div>
-                <div class="service">
-                    <h3>💼 <span data-lang="cross_border_wealth">Gestion de patrimoine transfrontalier</span></h3>
-                    <p data-lang="cross_border_wealth_desc">Les familles et entrepreneurs possédant des actifs dans plusieurs pays peuvent bénéficier de : Stratégies d’optimisation fiscale et successorale, Coordination entre notaires et fiscalistes de différents pays, Structuration via holdings, fondations, trusts ou contrats de mariage adaptés aux contextes bilatéraux.</p>
-                </div>
-                <div class="service">
-                    <h3>✈️ <span data-lang="relocation_support">Accompagnement à l’installation (visa, logement, fiscalité)</span></h3>
-                    <p data-lang="relocation_support_desc">Un soutien personnalisé est offert pour toute personne souhaitant s’expatrier : Aide à l’obtention de visas, permis de séjour et de travail, Recherche de logement, écoles, santé, Planification fiscale avant départ et après arrivée (domiciliation, convention de non-double imposition, impôt sur la fortune…), Assistance à l’ouverture de comptes, souscription d’assurances, etc.</p>
-                </div>
-            </div>
-
-            <!-- Développement durable & éthique des affaires -->
-            <h2 class="section-spacer" data-lang="sustainable_development">Développement durable & éthique des affaires</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <h3>♻️ <span data-lang="esg_integration">Intégration de critères ESG</span></h3>
-                    <p data-lang="esg_integration_desc">Les entreprises sont accompagnées dans l’intégration de critères Environnementaux, Sociaux et de Gouvernance dans leur stratégie : Diagnostic ESG, Identification des risques et opportunités durables, Mise en place d’indicateurs de suivi et de reporting ESG pour les investisseurs ou partenaires.</p>
-                </div>
-                <div class="service">
-                    <h3>✅ <span data-lang="csr_diagnosis">Diagnostic RSE</span></h3>
-                    <p data-lang="csr_diagnosis_desc">Un audit RSE (Responsabilité Sociétale des Entreprises) est réalisé pour mesurer la performance sociale et environnementale de l’entreprise : Analyse des politiques RH, environnementales, éthiques, Benchmark sectoriel, Plan d’action pour améliorer l’impact positif et renforcer l’image de marque.</p>
-                </div>
-                <div class="service">
-                    <h3>🌱 <span data-lang="sustainable_policies">Mise en œuvre de politiques durables</span></h3>
-                    <p data-lang="sustainable_policies_desc">Cela inclut la définition d’une stratégie de durabilité alignée avec les valeurs de l’entreprise et les attentes du marché : Politique d’achat responsable, Réduction de l’empreinte carbone, Gestion des déchets, mobilité durable, etc.</p>
-                </div>
-                <div class="service">
-                    <h3>📜 <span data-lang="certification_support">Accompagnement aux certifications (labels écologiques, etc.)</span></h3>
-                    <p data-lang="certification_support_desc">Les entreprises souhaitant obtenir des labels ou certifications peuvent être accompagnées : ISO 14001 (environnement), ISO 26000 (RSE), B Corp, EcoEntreprise, etc., Préparation des audits de certification, Formation des équipes aux normes et exigences.</p>
+            <div class="col-md-6 col-lg-4">
+                <div class="card-work h-100">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216" class="card-img-top" alt="Mobilité">
+                    <div class="card-body">
+                        <h4 data-lang="service6">Mobilité Internationale</h4>
+                        <p data-lang="service6_desc">Création de sociétés pour non-résidents et accompagnement expatriés.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 data-lang="contact_us">Contactez-nous</h2>
-            <p data-lang="contact_info">GTGEST SARL<br>1963 Vétroz<br>Email: <a href="mailto:info@gtgest.ch">info@gtgest.ch</a><br>Téléphone: +41 79 626 57 63</p>
+    <!-- Processus -->
+    <section id="process" class="bg-light">
+        <h2 class="section-title" data-lang="process_title">Notre Processus</h2>
+        <ol class="process-list">
+            <li class="process-item" data-lang="step1">Analyse approfondie de votre situation et objectifs</li>
+            <li class="process-item" data-lang="step2">Proposition de stratégie sur mesure</li>
+            <li class="process-item" data-lang="step3">Mise en œuvre et coordination des actions</li>
+            <li class="process-item" data-lang="step4">Suivi régulier et optimisation continue</li>
+            <li class="process-item" data-lang="step5">Accompagnement long terme</li>
+        </ol>
+    </section>
+
+    <!-- À propos -->
+    <section id="about">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-center mb-5 mb-lg-0">
+                <img src="https://tfxstorageimg.s3.amazonaws.com/mcezdheseg69m5ybm44ha6worc4l" class="img-fluid rounded-4" alt="GTGEST SARL" style="max-width: 85%;">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="display-5 mb-4" data-lang="about_title">À propos de GTGEST SARL</h2>
+                <p class="lead" data-lang="about_desc">Basée à Vétroz en Valais, GTGEST SARL est votre partenaire de confiance pour toutes les questions de gestion stratégique et d’optimisation patrimoniale.</p>
+                <p data-lang="about_text">Nous combinons rigueur suisse, expertise internationale et approche humaine pour vous offrir des solutions concrètes et performantes.</p>
+                <p class="mt-4"><strong>GTGEST SARL</strong><br>1963 Vétroz, Valais — Suisse</p>
+            </div>
         </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-light">
+        <h2 class="section-title" data-lang="contact_title">Contactez-nous</h2>
+        <div class="contact-box">
+            <p class="fs-4 mb-2" data-lang="email_label">Email : <a href="mailto:info@gtgest.ch">info@gtgest.ch</a></p>
+            <p class="fs-4" data-lang="phone_label">Téléphone : <a href="tel:+41796265763">+41 79 626 57 63</a></p>
+            <p class="text-success fw-bold mt-4" data-lang="response">Réponse garantie sous 48h</p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background: linear-gradient(135deg, var(--primary), #1e3a8a); color: white; text-align: center; padding: 80px 5%;">
+        <h2 class="display-5 mb-4" data-lang="cta_title">Prêt à passer à l’action ?</h2>
+        <p class="lead mb-5" data-lang="cta_sub">Un projet ? Une question stratégique ? Nous sommes à votre écoute.</p>
+        <a href="#contact" class="btn btn-light btn-lg" data-lang="cta_btn">Prendre rendez-vous</a>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 GTGEST SARL. <span data-lang="rights">Tous droits réservés.</span></p>
-        <p><a href="#hero" data-lang="back_top">Retour en haut</a></p>
+    <footer class="py-5 text-center bg-light">
+        <p data-lang="footer">© 2026 GTGEST SARL — Tous droits réservés.</p>
     </footer>
 
     <script>
         const translations = {
             fr: {
-                home: 'Accueil',
-                services: 'Services',
-                contact: 'Contact',
-                welcome: 'Bienvenue chez GTGEST SARL',
-                partner: 'Votre partenaire suisse en gestion stratégique',
-                discover: 'Découvrez nos services',
-                description: 'GTGEST SARL est une société suisse spécialisée dans la gestion d\'actifs et la facilitation de transactions internationales depuis 2021.',
-                activities: 'Nos Activités',
-                strategic_management: 'Gestion stratégique & organisation',
-                performance_diagnosis: 'Diagnostic de performance',
-                performance_diagnosis_desc: 'Ce processus implique une évaluation complète de l\'efficacité organisationnelle, en analysant les processus opérationnels, la structure hiérarchique, la culture d\'entreprise et les performances financières. L\'objectif est d\'identifier les points de friction, les inefficacités et les opportunités d\'amélioration. Les consultants utilisent des outils d\'analyse avancés pour fournir des recommandations concrètes visant à optimiser la performance globale de l\'entreprise.',
-                admin_flow_optimization: 'Optimisation des flux administratifs',
-                admin_flow_optimization_desc: 'Cette démarche consiste à revoir et à rationaliser les processus administratifs internes, tels que la gestion des documents, la communication inter-départements et les procédures de prise de décision. L\'objectif est de réduire les délais, minimiser les erreurs et améliorer la collaboration interne, souvent en intégrant des solutions technologiques adaptées.',
-                company_creation: 'Création ou restructuration de sociétés (Sàrl, SA, holdings)',
-                company_creation_desc: 'Les services incluent l\'accompagnement dans le choix de la structure juridique la plus appropriée en fonction des objectifs fiscaux, patrimoniaux et opérationnels de l\'entreprise. Cela peut comprendre la création de nouvelles entités, la fusion, la scission ou la mise en place de holdings pour optimiser la gestion des actifs et la fiscalité.',
-                interim_management: 'Management intérimaire (CFO, COO externalisé)',
-                interim_management_desc: 'Les experts externes interviennent pour gérer temporairement des fonctions clés telles que le directeur financier (CFO) ou le directeur des opérations (COO). Ils apportent une expertise spécialisée pour gérer des périodes de transition, des projets spécifiques ou des situations de crise, assurant ainsi la continuité et la performance de l\'entreprise.',
-                change_management: 'Conduite du changement',
-                change_management_desc: 'Ce service accompagne les entreprises dans la gestion des transformations organisationnelles, technologiques ou culturelles. Il comprend la planification du changement, la communication interne, la formation des employés et le suivi post-implémentation pour assurer une adoption réussie des nouvelles pratiques.',
-                financial_advice: 'Conseil financier, comptable & fiduciaire',
-                accounting: 'Tenue comptable (normes suisses et internationales)',
-                accounting_desc: 'Les services incluent la gestion quotidienne de la comptabilité, la préparation des états financiers conformément aux normes suisses (Swiss GAAP FER) et internationales (IFRS), ainsi que la consolidation des comptes pour les groupes internationaux. Cela garantit la transparence financière et la conformité réglementaire.',
-                tax_optimization: 'Optimisation fiscale (avec partenaires spécialisés)',
-                tax_optimization_desc: 'Les experts fiscales analysent la situation de l\'entreprise pour identifier des stratégies permettant de réduire la charge fiscale, telles que le choix de la structure juridique, l\'utilisation de crédits d\'impôt, la planification successorale et l\'optimisation des flux transfrontaliers.',
-                financial_forecasts: 'Prévisionnels financiers, budgets, indicateurs stratégiques',
-                financial_forecasts_desc: 'Ce service comprend l\'élaboration de prévisions financières basées sur des analyses de marché, la création de budgets détaillés et la mise en place d\'indicateurs de performance clés (KPI) pour suivre la rentabilité, la liquidité et la solvabilité de l\'entreprise.',
-                account_consolidation: 'Consolidation de comptes',
-                account_consolidation_desc: 'Les experts en consolidation préparent des états financiers consolidés pour les groupes de sociétés, en intégrant les résultats financiers des filiales et en éliminant les transactions intra-groupe, conformément aux normes comptables applicables.',
-                investment_structures: 'Création de structures d’investissement',
-                investment_structures_desc: 'Les services incluent la conception de structures juridiques et fiscales adaptées aux objectifs d\'investissement, telles que des fonds d\'investissement, des sociétés de gestion ou des holdings, permettant une gestion optimisée des actifs et une réduction des risques.',
-                real_estate: 'Immobilier & gestion d’actifs',
-                real_estate_due_diligence: 'Due diligence immobilière',
-                real_estate_due_diligence_desc: 'Ce processus d\'audit approfondi évalue la valeur, l\'état juridique, les risques environnementaux et les perspectives de rentabilité d\'un bien immobilier avant une acquisition ou une vente. Il inclut également l\'analyse des baux, des charges et des obligations réglementaires.',
-                project_monitoring: 'Suivi de projets de rénovation ou construction',
-                project_monitoring_desc: 'Les services comprennent la gestion de projet, la coordination des entrepreneurs, le contrôle des coûts et des délais, ainsi que la conformité aux normes de construction et de sécurité, assurant ainsi la réussite des projets immobiliers.',
-                portfolio_optimization: 'Optimisation de portefeuille immobilier',
-                portfolio_optimization_desc: 'Les experts analysent le portefeuille immobilier existant pour identifier des opportunités d\'amélioration, telles que la vente de biens sous-performants, l\'acquisition de nouveaux actifs ou la rénovation pour augmenter la valeur locative, tout en diversifiant les risques.',
-                cross_border_tax: 'Fiscalité immobilière transfrontalière',
-                cross_border_tax_desc: 'Ce service offre des conseils sur les implications fiscales des investissements immobiliers internationaux, y compris les conventions fiscales, les taxes sur les plus-values, les droits de succession et les stratégies de planification fiscale transfrontalière.',
-                passive_income: 'Mise en place de revenus passifs via la location',
-                passive_income_desc: 'Les services incluent l\'identification de biens immobiliers générant des revenus locatifs stables, la gestion des baux, la sélection des locataires et l\'optimisation des rendements, permettant ainsi de créer des flux de revenus passifs pour l\'investisseur.',
-                hospitality_sector: 'Secteur hôtelier & para-hôtelier',
-                margin_optimization: 'Optimisation des marges et de l’occupation',
-                margin_optimization_desc: 'Ce service utilise des techniques de revenue management et des outils d’analyse prédictive pour maximiser les revenus par chambre disponible (RevPAR). Cela inclut : La segmentation client fine pour adapter les offres tarifaires, La gestion dynamique des prix selon la demande et la saisonnalité, La formation des équipes de vente à la gestion proactive des réservations. Objectif : améliorer durablement la rentabilité et l’efficacité commerciale.',
-                compliance: 'Mise en conformité (sécurité, normes hôtelières)',
-                compliance_desc: 'Un audit complet est mené sur les installations et procédures de l’établissement afin d’assurer la conformité avec : Les normes de sécurité incendie, hygiène et accessibilité, La réglementation locale sur le travail, les assurances, la protection des données, Les normes spécifiques aux labels hôteliers (ex. : Swiss Quality, Relais & Châteaux). Le service inclut également l\'accompagnement dans les démarches administratives et les mises à jour régulières selon les évolutions légales.',
-                economic_security: 'Sécurité économique & intelligence d’affaires',
-                background_checks: 'Vérification d’antécédents (personnes et entreprises)',
-                background_checks_desc: 'Cette prestation vise à limiter les risques de réputation ou de fraude avant un partenariat, un recrutement ou une acquisition. Cela inclut : Recherche de litiges passés, casiers judiciaires, sanctions, Évaluation de la stabilité financière, Analyse de la présence digitale, des relations d’affaires et de l’historique professionnel. Elle est particulièrement utile pour les investissements à l’international, dans des marchés à faible transparence.',
-                fraud_prevention: 'Prévention des fraudes',
-                fraud_prevention_desc: 'Le service consiste à : Mettre en place des contrôles internes solides, Cartographier les risques de fraude (internes ou externes), Former les équipes aux signaux d’alerte et aux bonnes pratiques, Mettre en œuvre des systèmes de signalement et des audits préventifs. Objectif : protéger l’entreprise contre les détournements de fonds, les escroqueries ou la corruption.',
-                reputation_investigations: 'Enquêtes de réputation et solvabilité',
-                reputation_investigations_desc: 'Ces enquêtes permettent de vérifier l’intégrité et la solidité financière d’un partenaire ou d’une cible d’acquisition. Elles comprennent : L’analyse de solvabilité (score de crédit, dettes, paiements fournisseurs), L’enquête de réputation (presse, réseaux sociaux, sources locales), Les entretiens de vérification avec des tiers de confiance. Résultat : une prise de décision sécurisée, fondée sur des faits concrets.',
-                pre_acquisition_due_diligence: 'Due diligence pré-acquisition',
-                pre_acquisition_due_diligence_desc: 'La due diligence approfondie couvre les aspects juridiques, financiers, opérationnels, fiscaux, RH et commerciaux d’une entreprise cible : Analyse des contrats, litiges, actifs, dettes et engagements, Évaluation des performances passées et des projections, Recommandations sur la valorisation et les ajustements à négocier. But : éviter les mauvaises surprises post-acquisition et ajuster le prix ou les clauses contractuelles.',
-                information_protection: 'Stratégie de protection de l’information',
-                information_protection_desc: 'Face aux menaces croissantes (cyberattaques, espionnage industriel, fuites internes), ce service permet : L’audit des systèmes d’information, La mise en place de protocoles de cybersécurité (chiffrement, accès restreints, sauvegardes), La sensibilisation du personnel à la sécurité numérique, La gestion de crise en cas de violation de données.',
-                international_mobility: 'Mobilité internationale & support aux expatriés',
-                non_resident_companies: 'Création de sociétés pour non-résidents',
-                non_resident_companies_desc: 'Ce service aide les entrepreneurs et investisseurs étrangers à créer des entités légales (Sàrl, SA, succursales) dans un pays tiers, avec : L’analyse fiscale comparative (pays d’origine vs. pays d’implantation), La gestion des démarches administratives et bancaires, L’enregistrement auprès des autorités fiscales et sociales.',
-                international_entrepreneurs_advice: 'Conseil aux entrepreneurs internationaux',
-                international_entrepreneurs_advice_desc: 'Un accompagnement stratégique est proposé pour : Définir une structure juridique et fiscale optimale, Comprendre les obligations comptables, douanières, sociales locales, Accéder à des réseaux de partenaires fiables (avocats, notaires, banquiers), Naviguer les régulations internationales (embargos, conformité, TVA intracommunautaire…).',
-                cross_border_wealth: 'Gestion de patrimoine transfrontalier',
-                cross_border_wealth_desc: 'Les familles et entrepreneurs possédant des actifs dans plusieurs pays peuvent bénéficier de : Stratégies d’optimisation fiscale et successorale, Coordination entre notaires et fiscalistes de différents pays, Structuration via holdings, fondations, trusts ou contrats de mariage adaptés aux contextes bilatéraux.',
-                relocation_support: 'Accompagnement à l’installation (visa, logement, fiscalité)',
-                relocation_support_desc: 'Un soutien personnalisé est offert pour toute personne souhaitant s’expatrier : Aide à l’obtention de visas, permis de séjour et de travail, Recherche de logement, écoles, santé, Planification fiscale avant départ et après arrivée (domiciliation, convention de non-double imposition, impôt sur la fortune…), Assistance à l’ouverture de comptes, souscription d’assurances, etc.',
-                sustainable_development: 'Développement durable & éthique des affaires',
-                esg_integration: 'Intégration de critères ESG',
-                esg_integration_desc: 'Les entreprises sont accompagnées dans l’intégration de critères Environnementaux, Sociaux et de Gouvernance dans leur stratégie : Diagnostic ESG, Identification des risques et opportunités durables, Mise en place d’indicateurs de suivi et de reporting ESG pour les investisseurs ou partenaires.',
-                csr_diagnosis: 'Diagnostic RSE',
-                csr_diagnosis_desc: 'Un audit RSE (Responsabilité Sociétale des Entreprises) est réalisé pour mesurer la performance sociale et environnementale de l’entreprise : Analyse des politiques RH, environnementales, éthiques, Benchmark sectoriel, Plan d’action pour améliorer l’impact positif et renforcer l’image de marque.',
-                sustainable_policies: 'Mise en œuvre de politiques durables',
-                sustainable_policies_desc: 'Cela inclut la définition d’une stratégie de durabilité alignée avec les valeurs de l’entreprise et les attentes du marché : Politique d’achat responsable, Réduction de l’empreinte carbone, Gestion des déchets, mobilité durable, etc.',
-                certification_support: 'Accompagnement aux certifications (labels écologiques, etc.)',
-                certification_support_desc: 'Les entreprises souhaitant obtenir des labels ou certifications peuvent être accompagnées : ISO 14001 (environnement), ISO 26000 (RSE), B Corp, EcoEntreprise, etc., Préparation des audits de certification, Formation des équipes aux normes et exigences.',
-                contact_us: 'Contactez-nous',
-                contact_info: 'GTGEST SARL<br>1963 Vétroz<br>Email: <a href="mailto:info@gtgest.ch">info@gtgest.ch</a><br>Téléphone: +41 79 626 57 63',
-                rights: 'Tous droits réservés.',
-                back_top: 'Retour en haut'
+                logo: "GTGEST SARL",
+                nav_why: "Pourquoi nous", nav_services: "Services", nav_process: "Processus", nav_about: "À propos", nav_contact: "Contact",
+                hero_title: "Le partenaire stratégique dont votre entreprise a besoin",
+                hero_subtitle: "Gestion d’actifs, analyse financière, immobilier, sécurité économique et mobilité internationale en Suisse.",
+                hero_cta: "Demander un entretien",
+                why_title: "Pourquoi choisir GTGEST SARL ?",
+                why1: "Expertise Suisse", why1_desc: "Connaissance approfondie des réglementations suisses et internationales.",
+                why2: "Approche Stratégique", why2_desc: "Solutions sur mesure pour optimiser performance et rentabilité.",
+                why3: "Réseau International", why3_desc: "Partenaires de confiance dans plusieurs pays.",
+                services_title: "Nos Services",
+                service1: "Gestion Stratégique", service1_desc: "Diagnostic, optimisation des processus, création et restructuration de sociétés.",
+                service2: "Conseil Financier & Comptable", service2_desc: "Tenue comptable, optimisation fiscale, prévisionnels et consolidation.",
+                service3: "Immobilier & Actifs", service3_desc: "Due diligence, optimisation de portefeuille, suivi de projets.",
+                service4: "Secteur Hôtelier", service4_desc: "Optimisation des marges, conformité et revenue management.",
+                service5: "Sécurité Économique", service5_desc: "Due diligence, prévention des fraudes, vérifications d’antécédents.",
+                service6: "Mobilité Internationale", service6_desc: "Création de sociétés pour non-résidents et accompagnement expatriés.",
+                process_title: "Notre Processus",
+                step1: "Analyse approfondie de votre situation et objectifs",
+                step2: "Proposition de stratégie sur mesure",
+                step3: "Mise en œuvre et coordination des actions",
+                step4: "Suivi régulier et optimisation continue",
+                step5: "Accompagnement long terme",
+                about_title: "À propos de GTGEST SARL",
+                about_desc: "Basée à Vétroz en Valais, GTGEST SARL est votre partenaire de confiance pour toutes les questions de gestion stratégique et d’optimisation patrimoniale.",
+                about_text: "Nous combinons rigueur suisse, expertise internationale et approche humaine pour vous offrir des solutions concrètes et performantes.",
+                contact_title: "Contactez-nous",
+                email_label: "Email", phone_label: "Téléphone",
+                response: "Réponse garantie sous 48h",
+                cta_title: "Prêt à passer à l’action ?",
+                cta_sub: "Un projet ? Une question stratégique ? Nous sommes à votre écoute.",
+                cta_btn: "Prendre rendez-vous",
+                footer: "© 2026 GTGEST SARL — Tous droits réservés."
             },
             en: {
-                home: 'Home',
-                services: 'Services',
-                contact: 'Contact',
-                welcome: 'Welcome to GTGEST SARL',
-                partner: 'Your Swiss partner in strategic management',
-                discover: 'Discover our services',
-                description: 'GTGEST SARL is a Swiss company specialized in asset management and facilitating international transactions since 2021.',
-                activities: 'Our Activities',
-                strategic_management: 'Strategic Management & Organization',
-                performance_diagnosis: 'Performance Diagnosis',
-                performance_diagnosis_desc: 'This process involves a comprehensive evaluation of organizational efficiency, analyzing operational processes, hierarchical structure, company culture, and financial performance. The objective is to identify friction points, inefficiencies, and improvement opportunities. Consultants use advanced analysis tools to provide concrete recommendations aimed at optimizing the company\'s overall performance.',
-                admin_flow_optimization: 'Administrative Flow Optimization',
-                admin_flow_optimization_desc: 'This approach consists of reviewing and streamlining internal administrative processes, such as document management, inter-departmental communication, and decision-making procedures. The objective is to reduce delays, minimize errors, and improve internal collaboration, often by integrating appropriate technological solutions.',
-                company_creation: 'Creation or Restructuring of Companies (Sàrl, SA, holdings)',
-                company_creation_desc: 'The services include guidance in choosing the most appropriate legal structure based on the company\'s fiscal, patrimonial, and operational objectives. This may include the creation of new entities, mergers, splits, or the establishment of holdings to optimize asset management and taxation.',
-                interim_management: 'Interim Management (Outsourced CFO, COO)',
-                interim_management_desc: 'External experts intervene to temporarily manage key functions such as the Chief Financial Officer (CFO) or Chief Operating Officer (COO). They bring specialized expertise to handle transition periods, specific projects, or crisis situations, ensuring continuity and company performance.',
-                change_management: 'Change Management',
-                change_management_desc: 'This service supports companies in managing organizational, technological, or cultural transformations. It includes change planning, internal communication, employee training, and post-implementation monitoring to ensure successful adoption of new practices.',
-                financial_advice: 'Financial, Accounting & Fiduciary Advice',
-                accounting: 'Accounting Maintenance (Swiss and International Standards)',
-                accounting_desc: 'The services include daily accounting management, preparation of financial statements in accordance with Swiss (Swiss GAAP FER) and international (IFRS) standards, as well as consolidation of accounts for international groups. This ensures financial transparency and regulatory compliance.',
-                tax_optimization: 'Tax Optimization (with Specialized Partners)',
-                tax_optimization_desc: 'Tax experts analyze the company\'s situation to identify strategies to reduce the tax burden, such as choosing the legal structure, using tax credits, succession planning, and optimizing cross-border flows.',
-                financial_forecasts: 'Financial Forecasts, Budgets, Strategic Indicators',
-                financial_forecasts_desc: 'This service includes the development of financial forecasts based on market analyses, the creation of detailed budgets, and the establishment of key performance indicators (KPIs) to monitor profitability, liquidity, and solvency of the company.',
-                account_consolidation: 'Account Consolidation',
-                account_consolidation_desc: 'Consolidation experts prepare consolidated financial statements for groups of companies, integrating the financial results of subsidiaries and eliminating intra-group transactions, in accordance with applicable accounting standards.',
-                investment_structures: 'Creation of Investment Structures',
-                investment_structures_desc: 'The services include the design of legal and tax structures adapted to investment objectives, such as investment funds, management companies, or holdings, allowing optimized asset management and risk reduction.',
-                real_estate: 'Real Estate & Asset Management',
-                real_estate_due_diligence: 'Real Estate Due Diligence',
-                real_estate_due_diligence_desc: 'This in-depth audit process evaluates the value, legal status, environmental risks, and profitability prospects of a real estate property before an acquisition or sale. It also includes the analysis of leases, charges, and regulatory obligations.',
-                project_monitoring: 'Monitoring of Renovation or Construction Projects',
-                project_monitoring_desc: 'The services include project management, coordination of contractors, cost and deadline control, as well as compliance with construction and safety standards, ensuring the success of real estate projects.',
-                portfolio_optimization: 'Real Estate Portfolio Optimization',
-                portfolio_optimization_desc: 'Experts analyze the existing real estate portfolio to identify improvement opportunities, such as selling underperforming properties, acquiring new assets, or renovating to increase rental value, while diversifying risks.',
-                cross_border_tax: 'Cross-Border Real Estate Taxation',
-                cross_border_tax_desc: 'This service provides advice on the tax implications of international real estate investments, including tax treaties, capital gains taxes, inheritance rights, and cross-border tax planning strategies.',
-                passive_income: 'Setting Up Passive Income through Rental',
-                passive_income_desc: 'The services include identifying real estate properties generating stable rental income, lease management, tenant selection, and yield optimization, thus allowing the creation of passive income streams for the investor.',
-                hospitality_sector: 'Hospitality & Para-Hospitality Sector',
-                margin_optimization: 'Margin and Occupancy Optimization',
-                margin_optimization_desc: 'This service uses revenue management techniques and predictive analysis tools to maximize revenue per available room (RevPAR). This includes: Fine customer segmentation to adapt pricing offers, Dynamic price management according to demand and seasonality, Training sales teams in proactive booking management. Objective: sustainably improve profitability and commercial efficiency.',
-                compliance: 'Compliance (Safety, Hotel Standards)',
-                compliance_desc: 'A complete audit is conducted on the establishment\'s facilities and procedures to ensure compliance with: Fire safety, hygiene, and accessibility standards, Local regulations on work, insurance, data protection, Specific standards for hotel labels (e.g., Swiss Quality, Relais & Châteaux). The service also includes support in administrative procedures and regular updates according to legal developments.',
-                economic_security: 'Economic Security & Business Intelligence',
-                background_checks: 'Background Checks (Individuals and Companies)',
-                background_checks_desc: 'This service aims to limit reputation or fraud risks before a partnership, recruitment, or acquisition. This includes: Research on past litigations, criminal records, sanctions, Evaluation of financial stability, Analysis of digital presence, business relationships, and professional history. It is particularly useful for international investments in markets with low transparency.',
-                fraud_prevention: 'Fraud Prevention',
-                fraud_prevention_desc: 'The service consists of: Implementing strong internal controls, Mapping fraud risks (internal or external), Training teams on alert signals and best practices, Implementing reporting systems and preventive audits. Objective: protect the company against embezzlement, scams, or corruption.',
-                reputation_investigations: 'Reputation and Solvency Investigations',
-                reputation_investigations_desc: 'These investigations allow verifying the integrity and financial solidity of a partner or acquisition target. They include: Solvency analysis (credit score, debts, supplier payments), Reputation investigation (press, social networks, local sources), Verification interviews with trusted third parties. Result: a secure decision-making based on concrete facts.',
-                pre_acquisition_due_diligence: 'Pre-Acquisition Due Diligence',
-                pre_acquisition_due_diligence_desc: 'The in-depth due diligence covers the legal, financial, operational, tax, HR, and commercial aspects of a target company: Analysis of contracts, litigations, assets, debts, and commitments, Evaluation of past performances and projections, Recommendations on valuation and adjustments to negotiate. Goal: avoid post-acquisition surprises and adjust the price or contractual clauses.',
-                information_protection: 'Information Protection Strategy',
-                information_protection_desc: 'Faced with growing threats (cyberattacks, industrial espionage, internal leaks), this service allows: Auditing information systems, Implementing cybersecurity protocols (encryption, restricted access, backups), Raising staff awareness of digital security, Crisis management in case of data breach.',
-                international_mobility: 'International Mobility & Expatriate Support',
-                non_resident_companies: 'Creation of Companies for Non-Residents',
-                non_resident_companies_desc: 'This service helps foreign entrepreneurs and investors create legal entities (Sàrl, SA, branches) in a third country, with: Comparative tax analysis (country of origin vs. country of implantation), Management of administrative and banking procedures, Registration with tax and social authorities.',
-                international_entrepreneurs_advice: 'Advice to International Entrepreneurs',
-                international_entrepreneurs_advice_desc: 'Strategic support is offered to: Define an optimal legal and tax structure, Understand local accounting, customs, social obligations, Access reliable partner networks (lawyers, notaries, bankers), Navigate international regulations (embargoes, compliance, intra-community VAT...).',
-                cross_border_wealth: 'Cross-Border Wealth Management',
-                cross_border_wealth_desc: 'Families and entrepreneurs owning assets in several countries can benefit from: Tax and succession optimization strategies, Coordination between notaries and tax specialists from different countries, Structuring via holdings, foundations, trusts, or marriage contracts adapted to bilateral contexts.',
-                relocation_support: 'Relocation Support (Visa, Housing, Taxation)',
-                relocation_support_desc: 'Personalized support is offered to anyone wishing to expatriate: Assistance in obtaining visas, residence and work permits, Search for housing, schools, health, Tax planning before departure and after arrival (domiciliation, non-double taxation agreement, wealth tax...), Assistance in opening accounts, subscribing to insurances, etc.',
-                sustainable_development: 'Sustainable Development & Business Ethics',
-                esg_integration: 'Integration of ESG Criteria',
-                esg_integration_desc: 'Companies are supported in integrating Environmental, Social, and Governance criteria into their strategy: ESG diagnosis, Identification of sustainable risks and opportunities, Establishment of monitoring indicators and ESG reporting for investors or partners.',
-                csr_diagnosis: 'CSR Diagnosis',
-                csr_diagnosis_desc: 'A CSR audit (Corporate Social Responsibility) is carried out to measure the company\'s social and environmental performance: Analysis of HR, environmental, ethical policies, Sector benchmark, Action plan to improve positive impact and strengthen brand image.',
-                sustainable_policies: 'Implementation of Sustainable Policies',
-                sustainable_policies_desc: 'This includes defining a sustainability strategy aligned with the company\'s values and market expectations: Responsible purchasing policy, Reduction of carbon footprint, Waste management, sustainable mobility, etc.',
-                certification_support: 'Support for Certifications (Ecological Labels, etc.)',
-                certification_support_desc: 'Companies wishing to obtain labels or certifications can be supported: ISO 14001 (environment), ISO 26000 (CSR), B Corp, EcoEntreprise, etc., Preparation for certification audits, Training teams on standards and requirements.',
-                contact_us: 'Contact Us',
-                contact_info: 'GTGEST SARL<br>1963 Vétroz<br>Email: <a href="mailto:info@gtgest.ch">info@gtgest.ch</a><br>Phone: +41 79 626 57 63',
-                rights: 'All rights reserved.',
-                back_top: 'Back to top'
+                logo: "GTGEST SARL",
+                nav_why: "Why Us", nav_services: "Services", nav_process: "Process", nav_about: "About", nav_contact: "Contact",
+                hero_title: "The strategic partner your business needs",
+                hero_subtitle: "Asset management, financial analysis, real estate, economic security and international mobility in Switzerland.",
+                hero_cta: "Request a meeting",
+                why_title: "Why choose GTGEST SARL?",
+                why1: "Swiss Expertise", why1_desc: "In-depth knowledge of Swiss and international regulations.",
+                why2: "Strategic Approach", why2_desc: "Tailored solutions to optimize performance and profitability.",
+                why3: "International Network", why3_desc: "Trusted partners in several countries.",
+                services_title: "Our Services",
+                service1: "Strategic Management", service1_desc: "Diagnosis, process optimization, company creation and restructuring.",
+                service2: "Financial & Accounting Advice", service2_desc: "Accounting, tax optimization, forecasts and consolidation.",
+                service3: "Real Estate & Assets", service3_desc: "Due diligence, portfolio optimization, project monitoring.",
+                service4: "Hospitality Sector", service4_desc: "Margin optimization, compliance and revenue management.",
+                service5: "Economic Security", service5_desc: "Due diligence, fraud prevention, background checks.",
+                service6: "International Mobility", service6_desc: "Company creation for non-residents and expatriate support.",
+                process_title: "Our Process",
+                step1: "In-depth analysis of your situation and objectives",
+                step2: "Custom strategy proposal",
+                step3: "Implementation and coordination of actions",
+                step4: "Regular monitoring and continuous optimization",
+                step5: "Long-term support",
+                about_title: "About GTGEST SARL",
+                about_desc: "Based in Vétroz, Valais, GTGEST SARL is your trusted partner for all strategic management and asset optimization.",
+                about_text: "We combine Swiss rigor, international expertise and a human approach.",
+                contact_title: "Contact Us",
+                email_label: "Email", phone_label: "Phone",
+                response: "Response guaranteed within 48h",
+                cta_title: "Ready to take action?",
+                cta_sub: "A project? A strategic question? We are here for you.",
+                cta_btn: "Book an appointment",
+                footer: "© 2026 GTGEST SARL — All rights reserved."
             },
             de: {
-                home: 'Startseite',
-                services: 'Dienste',
-                contact: 'Kontakt',
-                welcome: 'Willkommen bei GTGEST SARL',
-                partner: 'Ihr Schweizer Partner im strategischen Management',
-                discover: 'Entdecken Sie unsere Dienste',
-                description: 'GTGEST SARL ist ein Schweizer Unternehmen, das sich seit 2021 auf Vermögensverwaltung und die Erleichterung internationaler Transaktionen spezialisiert hat.',
-                activities: 'Unsere Aktivitäten',
-                strategic_management: 'Strategisches Management & Organisation',
-                performance_diagnosis: 'Leistungsdiagnose',
-                performance_diagnosis_desc: 'Dieser Prozess umfasst eine umfassende Bewertung der organisatorischen Effizienz, die Analyse betrieblicher Prozesse, hierarchischer Struktur, Unternehmenskultur und finanzieller Leistung. Das Ziel ist es, Reibungspunkte, Ineffizienzen und Verbesserungsmöglichkeiten zu identifizieren. Berater verwenden fortgeschrittene Analysetools, um konkrete Empfehlungen zur Optimierung der Gesamtleistung des Unternehmens zu geben.',
-                admin_flow_optimization: 'Optimierung administrativer Abläufe',
-                admin_flow_optimization_desc: 'Dieser Ansatz besteht darin, interne administrative Prozesse zu überprüfen und zu rationalisieren, wie Dokumentenmanagement, interdepartementale Kommunikation und Entscheidungsverfahren. Das Ziel ist es, Verzögerungen zu reduzieren, Fehler zu minimieren und die interne Zusammenarbeit zu verbessern, oft durch Integration geeigneter technologischer Lösungen.',
-                company_creation: 'Gründung oder Umstrukturierung von Gesellschaften (GmbH, AG, Holdings)',
-                company_creation_desc: 'Die Dienstleistungen umfassen die Begleitung bei der Wahl der am besten geeigneten Rechtsstruktur basierend auf den steuerlichen, vermögensrechtlichen und operativen Zielen des Unternehmens. Dies kann die Gründung neuer Einheiten, Fusionen, Spaltungen oder die Einrichtung von Holdings zur Optimierung der Vermögensverwaltung und Steuerung umfassen.',
-                interim_management: 'Interimsmanagement (Outsourced CFO, COO)',
-                interim_management_desc: 'Externe Experten greifen ein, um vorübergehend Schlüsselpositionen wie den Finanzdirektor (CFO) oder den Betriebsdirektor (COO) zu managen. Sie bringen spezialisierte Expertise, um Übergangsperioden, spezifische Projekte oder Krisensituationen zu handhaben und die Kontinuität und Leistung des Unternehmens zu gewährleisten.',
-                change_management: 'Change Management',
-                change_management_desc: 'Dieser Dienst unterstützt Unternehmen bei der Bewältigung organisatorischer, technologischer oder kultureller Transformationen. Er umfasst die Planung des Wandels, interne Kommunikation, Schulung der Mitarbeiter und Nachverfolgung nach der Implementierung, um eine erfolgreiche Annahme neuer Praktiken zu gewährleisten.',
-                financial_advice: 'Finanz-, Buchhaltungs- & Treuhandberatung',
-                accounting: 'Buchhaltung (Schweizer und internationale Standards)',
-                accounting_desc: 'Die Dienstleistungen umfassen die tägliche Buchhaltung, die Erstellung von Jahresabschlüssen gemäß Schweizer (Swiss GAAP FER) und internationalen (IFRS) Standards sowie die Konsolidierung von Konten für internationale Gruppen. Dies gewährleistet finanzielle Transparenz und regulatorische Compliance.',
-                tax_optimization: 'Steueroptimierung (mit spezialisierten Partnern)',
-                tax_optimization_desc: 'Steuerexperten analysieren die Situation des Unternehmens, um Strategien zur Reduzierung der Steuerlast zu identifizieren, wie die Wahl der Rechtsstruktur, Nutzung von Steuergutschriften, Nachfolgeplanung und Optimierung grenzüberschreitender Flüsse.',
-                financial_forecasts: 'Finanzprognosen, Budgets, strategische Indikatoren',
-                financial_forecasts_desc: 'Dieser Dienst umfasst die Erstellung von Finanzprognosen basierend auf Marktananalysen, die Erstellung detaillierter Budgets und die Einrichtung von Key Performance Indicators (KPIs), um Rentabilität, Liquidität und Solvabilität des Unternehmens zu überwachen.',
-                account_consolidation: 'Konsolidierung von Konten',
-                account_consolidation_desc: 'Konsolidierungsexperten erstellen konsolidierte Jahresabschlüsse für Unternehmensgruppen, integrieren die finanziellen Ergebnisse von Tochtergesellschaften und eliminieren Intra-Gruppen-Transaktionen gemäß den anwendbaren Buchhaltungsstandards.',
-                investment_structures: 'Erstellung von Investitionsstrukturen',
-                investment_structures_desc: 'Die Dienstleistungen umfassen die Gestaltung rechtlicher und steuerlicher Strukturen, die an Investitionsziele angepasst sind, wie Investmentfonds, Verwaltungsgesellschaften oder Holdings, die eine optimierte Vermögensverwaltung und Risikominderung ermöglichen.',
-                real_estate: 'Immobilien & Vermögensverwaltung',
-                real_estate_due_diligence: 'Immobilien Due Diligence',
-                real_estate_due_diligence_desc: 'Dieser gründliche Auditprozess bewertet den Wert, den rechtlichen Status, umweltbedingte Risiken und die Rentabilitätsaussichten einer Immobilie vor einem Erwerb oder Verkauf. Er umfasst auch die Analyse von Mietverträgen, Belastungen und regulatorischen Verpflichtungen.',
-                project_monitoring: 'Überwachung von Renovierungs- oder Bauprojekten',
-                project_monitoring_desc: 'Die Dienstleistungen umfassen Projektmanagement, Koordination von Auftragnehmern, Kosten- und Fristenkontrolle sowie Einhaltung von Bau- und Sicherheitsstandards, um den Erfolg von Immobilienprojekten zu gewährleisten.',
-                portfolio_optimization: 'Optimierung des Immobilienportfolios',
-                portfolio_optimization_desc: 'Experten analysieren das bestehende Immobilienportfolio, um Verbesserungsmöglichkeiten zu identifizieren, wie den Verkauf unterperformender Immobilien, den Erwerb neuer Assets oder Renovierungen zur Steigerung des Mietwerts, während Risiken diversifiziert werden.',
-                cross_border_tax: 'Grenzüberschreitende Immobiliensteuer',
-                cross_border_tax_desc: 'Dieser Dienst bietet Beratung zu den steuerlichen Implikationen internationaler Immobilieninvestitionen, einschließlich Steuerabkommen, Kapitalgewinnsteuern, Erbschaftsrechten und grenzüberschreitenden Steuerplanungsstrategien.',
-                passive_income: 'Aufbau passiver Einnahmen durch Vermietung',
-                passive_income_desc: 'Die Dienstleistungen umfassen die Identifizierung von Immobilien, die stabile Mieteinnahmen generieren, Mietvertragsmanagement, Mieterauswahl und Renditeoptimierung, um passive Einnahmequellen für den Investor zu schaffen.',
-                hospitality_sector: 'Hotellerie & Para-Hotellerie Sektor',
-                margin_optimization: 'Optimierung von Margen und Belegung',
-                margin_optimization_desc: 'Dieser Dienst nutzt Revenue-Management-Techniken und prädiktive Analysetools, um den Umsatz pro verfügbarem Zimmer (RevPAR) zu maximieren. Dies umfasst: Feine Kundensegmentierung zur Anpassung von Preisen, Dynamisches Preismanagement je nach Nachfrage und Saisonalität, Schulung von Verkaufsteams im proaktiven Buchungsmanagement. Ziel: Nachhaltige Verbesserung der Rentabilität und kommerziellen Effizienz.',
-                compliance: 'Compliance (Sicherheit, Hotelstandards)',
-                compliance_desc: 'Eine vollständige Auditierung der Einrichtungen und Verfahren des Betriebs wird durchgeführt, um die Einhaltung zu gewährleisten: Brandschutz-, Hygiene- und Zugänglichkeitsstandards, Lokale Vorschriften zu Arbeit, Versicherungen, Datenschutz, Spezifische Standards für Hotel-Labels (z.B. Swiss Quality, Relais & Châteaux). Der Dienst umfasst auch Unterstützung bei administrativen Verfahren und regelmäßige Updates gemäß rechtlichen Entwicklungen.',
-                economic_security: 'Wirtschaftssicherheit & Business Intelligence',
-                background_checks: 'Hintergrundüberprüfungen (Personen und Unternehmen)',
-                background_checks_desc: 'Diese Leistung zielt darauf ab, Reputations- oder Betrugsrisiken vor einer Partnerschaft, Einstellung oder Akquisition zu begrenzen. Dies umfasst: Recherche zu vergangenen Rechtsstreitigkeiten, Strafregistern, Sanktionen, Bewertung der finanziellen Stabilität, Analyse der digitalen Präsenz, Geschäftsbeziehungen und beruflichen Geschichte. Sie ist besonders nützlich für internationale Investitionen in Märkten mit geringer Transparenz.',
-                fraud_prevention: 'Betrugsprävention',
-                fraud_prevention_desc: 'Der Dienst besteht darin: Starke interne Kontrollen einzuführen, Betrugsrisiken (intern oder extern) zu kartieren, Teams zu Warnsignalen und Best Practices zu schulen, Meldesysteme und präventive Audits umzusetzen. Ziel: Das Unternehmen vor Unterschlagungen, Betrug oder Korruption zu schützen.',
-                reputation_investigations: 'Reputation- und Solvabilitätsuntersuchungen',
-                reputation_investigations_desc: 'Diese Untersuchungen ermöglichen die Überprüfung der Integrität und finanziellen Solidität eines Partners oder Akquisitionsziels. Sie umfassen: Solvabilitätsanalyse (Kreditscore, Schulden, Lieferantenzahlungen), Reputationsuntersuchung (Presse, soziale Netzwerke, lokale Quellen), Verifizierungsgespräche mit vertrauenswürdigen Dritten. Ergebnis: Eine sichere Entscheidungsfindung basierend auf konkreten Fakten.',
-                pre_acquisition_due_diligence: 'Due Diligence vor Akquisition',
-                pre_acquisition_due_diligence_desc: 'Die gründliche Due Diligence deckt die rechtlichen, finanziellen, operativen, steuerlichen, HR- und kommerziellen Aspekte eines Zielunternehmens ab: Analyse von Verträgen, Rechtsstreitigkeiten, Assets, Schulden und Verpflichtungen, Bewertung vergangener Leistungen und Prognosen, Empfehlungen zur Bewertung und anzupassenden Verhandlungen. Ziel: Post-Akquisitionsüberraschungen vermeiden und Preis oder Vertragsklauseln anpassen.',
-                information_protection: 'Strategie zum Schutz von Informationen',
-                information_protection_desc: 'Angesichts wachsender Bedrohungen (Cyberangriffe, Industriespionage, interne Lecks) ermöglicht dieser Dienst: Audit von Informationssystemen, Einrichtung von Cybersicherheitsprotokollen (Verschlüsselung, eingeschränkter Zugriff, Backups), Sensibilisierung des Personals für digitale Sicherheit, Krisenmanagement bei Datenschutzverletzungen.',
-                international_mobility: 'Internationale Mobilität & Unterstützung für Expatriierte',
-                non_resident_companies: 'Gründung von Gesellschaften für Nicht-Residenten',
-                non_resident_companies_desc: 'Dieser Dienst hilft ausländischen Unternehmern und Investoren, legale Einheiten (GmbH, AG, Niederlassungen) in einem Drittland zu gründen, mit: Vergleichender Steueranalyse (Herkunftsland vs. Implantationsland), Management administrativer und bankmäßiger Verfahren, Registrierung bei Steuer- und Sozialbehörden.',
-                international_entrepreneurs_advice: 'Beratung für internationale Unternehmer',
-                international_entrepreneurs_advice_desc: 'Strategische Unterstützung wird angeboten, um: Eine optimale rechtliche und steuerliche Struktur zu definieren, Lokale Buchhaltungs-, Zoll- und soziale Verpflichtungen zu verstehen, Zugriff auf zuverlässige Partnernetzwerke (Anwälte, Notare, Banker), Internationale Regulierungen zu navigieren (Embargos, Compliance, intra-kommunale MwSt...).',
-                cross_border_wealth: 'Grenzüberschreitende Vermögensverwaltung',
-                cross_border_wealth_desc: 'Familien und Unternehmer mit Assets in mehreren Ländern können von: Steuer- und Nachfolgeoptimierungsstrategien profitieren, Koordination zwischen Notaren und Steuerspezialisten aus verschiedenen Ländern, Strukturierung via Holdings, Stiftungen, Trusts oder Eheverträge, angepasst an bilaterale Kontexte.',
-                relocation_support: 'Unterstützung bei der Installation (Visa, Wohnen, Steuern)',
-                relocation_support_desc: "Personalisierte Unterstützung wird für jede Person angeboten, die expatriieren möchte: Hilfe bei der Erlangung von Visa, Aufenthalts- und Arbeitsgenehmigungen, Suche nach Wohnungen, Schulen, Gesundheit, Steuerplanung vor der Abreise und nach der Ankunft (Domizilierung, Nicht-Doppelbesteuerungsabkommen, Vermögenssteuer...), Unterstützung bei der Eröffnung von Konten, Abschluss von Versicherungen usw.",
-                sustainable_development: 'Nachhaltige Entwicklung & Geschäftsethik',
-                esg_integration: 'Integration von ESG-Kriterien',
-                esg_integration_desc: 'Unternehmen werden bei der Integration umweltbezogener, sozialer und governancebezogener Kriterien in ihre Strategie unterstützt: ESG-Diagnose, Identifizierung nachhaltiger Risiken und Chancen, Einrichtung von Überwachungsindikatoren und ESG-Reporting für Investoren oder Partner.',
-                csr_diagnosis: 'CSR-Diagnose',
-                csr_diagnosis_desc: 'Ein CSR-Audit (Corporate Social Responsibility) wird durchgeführt, um die soziale und umweltbezogene Leistung des Unternehmens zu messen: Analyse von HR-, umwelt- und ethischen Politiken, Branchenbenchmark, Aktionsplan zur Verbesserung des positiven Impacts und Stärkung des Markenimages.',
-                sustainable_policies: 'Umsetzung nachhaltiger Politiken',
-                sustainable_policies_desc: 'Dies umfasst die Definition einer Nachhaltigkeitsstrategie, die mit den Werten des Unternehmens und den Markterwartungen abgestimmt ist: Verantwortungsvolle Einkaufspolitik, Reduzierung des CO2-Fußabdrucks, Abfallmanagement, nachhaltige Mobilität usw.',
-                certification_support: 'Unterstützung bei Zertifizierungen (Öko-Labels usw.)',
-                certification_support_desc: 'Unternehmen, die Labels oder Zertifizierungen erlangen möchten, können unterstützt werden: ISO 14001 (Umwelt), ISO 26000 (CSR), B Corp, EcoEntreprise usw., Vorbereitung auf Zertifizierungs-Audits, Schulung der Teams zu Standards und Anforderungen.',
-                contact_us: 'Kontaktieren Sie uns',
-                contact_info: 'GTGEST SARL<br>1963 Vétroz<br>E-Mail: <a href="mailto:info@gtgest.ch">info@gtgest.ch</a><br>Telefon: +41 79 626 57 63',
-                rights: 'Alle Rechte vorbehalten.',
-                back_top: 'Zurück nach oben'
+                logo: "GTGEST SARL",
+                nav_why: "Warum wir", nav_services: "Dienstleistungen", nav_process: "Prozess", nav_about: "Über uns", nav_contact: "Kontakt",
+                hero_title: "Der strategische Partner den Ihr Unternehmen braucht",
+                hero_subtitle: "Vermögensverwaltung, Finanzoptimierung, Immobilien, Wirtschaftssicherheit und internationale Mobilität.",
+                hero_cta: "Gespräch vereinbaren",
+                why_title: "Warum GTGEST SARL?",
+                why1: "Schweizer Expertise", why1_desc: "Tiefgehende Kenntnisse schweizerischer und internationaler Vorschriften.",
+                why2: "Strategischer Ansatz", why2_desc: "Massgeschneiderte Lösungen zur Optimierung von Leistung und Rentabilität.",
+                why3: "Internationales Netzwerk", why3_desc: "Vertrauenswürdige Partner in mehreren Ländern.",
+                services_title: "Unsere Dienstleistungen",
+                service1: "Strategisches Management", service1_desc: "Diagnose, Prozessoptimierung, Gründung und Umstrukturierung.",
+                service2: "Finanz- & Buchhaltungsberatung", service2_desc: "Buchhaltung, Steueroptimierung, Prognosen und Konsolidierung.",
+                service3: "Immobilien & Vermögen", service3_desc: "Due Diligence, Portfolio-Optimierung, Projektbegleitung.",
+                service4: "Hotelsektor", service4_desc: "Margenoptimierung, Compliance und Revenue Management.",
+                service5: "Wirtschaftssicherheit", service5_desc: "Due Diligence, Betrugsprävention, Hintergrundprüfungen.",
+                service6: "Internationale Mobilität", service6_desc: "Gesellschaftsgründung für Nicht-Residenten und Expatriate-Begleitung.",
+                process_title: "Unser Prozess",
+                step1: "Tiefgehende Analyse Ihrer Situation und Ziele",
+                step2: "Massgeschneiderte Strategie",
+                step3: "Umsetzung und Koordination",
+                step4: "Regelmässige Überwachung und Optimierung",
+                step5: "Langfristige Begleitung",
+                about_title: "Über GTGEST SARL",
+                about_desc: "Mit Sitz in Vétroz ist GTGEST SARL Ihr vertrauenswürdiger Partner für strategisches Management und Vermögensoptimierung.",
+                about_text: "Wir verbinden schweizerische Strenge, internationale Expertise und menschliche Herangehensweise.",
+                contact_title: "Kontaktieren Sie uns",
+                email_label: "E-Mail", phone_label: "Telefon",
+                response: "Antwort innerhalb von 24 Stunden garantiert",
+                cta_title: "Bereit zum Handeln?",
+                cta_sub: "Ein Projekt? Eine strategische Frage? Wir sind für Sie da.",
+                cta_btn: "Termin vereinbaren",
+                footer: "© 2026 GTGEST SARL — Alle Rechte vorbehalten."
             },
             it: {
-                home: 'Home',
-                services: 'Servizi',
-                contact: 'Contatti',
-                welcome: 'Benvenuti in GTGEST SARL',
-                partner: 'Il vostro partner svizzero in gestione strategica',
-                discover: 'Scoprite i nostri servizi',
-                description: 'GTGEST SARL è una società svizzera specializzata nella gestione patrimoniale e nella facilitazione delle transazioni internazionali dal 2021.',
-                activities: 'Le nostre attività',
-                strategic_management: 'Gestione strategica & organizzazione',
-                performance_diagnosis: 'Diagnosi di performance',
-                performance_diagnosis_desc: 'Questo processo implica una valutazione completa dell\'efficienza organizzativa, analizzando i processi operativi, la struttura gerarchica, la cultura aziendale e le prestazioni finanziarie. L\'obiettivo è identificare punti di frizione, inefficienze e opportunità di miglioramento. I consulenti utilizzano strumenti di analisi avanzati per fornire raccomandazioni concrete volte a ottimizzare le prestazioni complessive dell\'azienda.',
-                admin_flow_optimization: 'Ottimizzazione dei flussi amministrativi',
-                admin_flow_optimization_desc: 'Questo approccio consiste nel rivedere e razionalizzare i processi amministrativi interni, come la gestione dei documenti, la comunicazione inter-dipartimentale e le procedure di decisione. L\'obiettivo è ridurre i ritardi, minimizzare gli errori e migliorare la collaborazione interna, spesso integrando soluzioni tecnologiche appropriate.',
-                company_creation: 'Creazione o ristrutturazione di società (Sàrl, SA, holdings)',
-                company_creation_desc: 'I servizi includono l\'accompagnamento nella scelta della struttura giuridica più appropriata in base agli obiettivi fiscali, patrimoniali e operativi dell\'azienda. Questo può includere la creazione di nuove entità, fusioni, scissioni o l\'istituzione di holdings per ottimizzare la gestione degli asset e la fiscalità.',
-                interim_management: 'Management interinale (CFO, COO esternalizzato)',
-                interim_management_desc: 'Esperti esterni intervengono per gestire temporaneamente funzioni chiave come il direttore finanziario (CFO) o il direttore operativo (COO). Portano expertise specializzata per gestire periodi di transizione, progetti specifici o situazioni di crisi, garantendo continuità e performance dell\'azienda.',
-                change_management: 'Gestione del cambiamento',
-                change_management_desc: 'Questo servizio accompagna le aziende nella gestione delle trasformazioni organizzative, tecnologiche o culturali. Include la pianificazione del cambiamento, la comunicazione interna, la formazione dei dipendenti e il monitoraggio post-implementazione per garantire un\'adozione riuscita delle nuove pratiche.',
-                financial_advice: 'Consulenza finanziaria, contabile & fiduciaria',
-                accounting: 'Tenuta contabile (norme svizzere e internazionali)',
-                accounting_desc: 'I servizi includono la gestione quotidiana della contabilità, la preparazione dei bilanci in conformità con le norme svizzere (Swiss GAAP FER) e internazionali (IFRS), nonché il consolidamento dei conti per gruppi internazionali. Questo garantisce trasparenza finanziaria e conformità regolamentare.',
-                tax_optimization: 'Ottimizzazione fiscale (con partner specializzati)',
-                tax_optimization_desc: 'Esperti fiscali analizzano la situazione dell\'azienda per identificare strategie per ridurre il carico fiscale, come la scelta della struttura giuridica, l\'uso di crediti d\'imposta, la pianificazione successoria e l\'ottimizzazione dei flussi transfrontalieri.',
-                financial_forecasts: 'Previsioni finanziarie, budget, indicatori strategici',
-                financial_forecasts_desc: 'Questo servizio include l\'elaborazione di previsioni finanziarie basate su analisi di mercato, la creazione di budget dettagliati e l\'istituzione di indicatori chiave di performance (KPI) per monitorare redditività, liquidità e solvibilità dell\'azienda.',
-                account_consolidation: 'Consolidamento dei conti',
-                account_consolidation_desc: 'Esperti in consolidamento preparano bilanci consolidati per gruppi di società, integrando i risultati finanziari delle filiali ed eliminando le transazioni intra-gruppo, in conformità con le norme contabili applicabili.',
-                investment_structures: 'Creazione di strutture d\'investimento',
-                investment_structures_desc: 'I servizi includono la progettazione di strutture giuridiche e fiscali adattate agli obiettivi di investimento, come fondi di investimento, società di gestione o holdings, permettendo una gestione ottimizzata degli asset e una riduzione dei rischi.',
-                real_estate: 'Immobiliare & gestione degli asset',
-                real_estate_due_diligence: 'Due diligence immobiliare',
-                real_estate_due_diligence_desc: 'Questo processo di audit approfondito valuta il valore, lo stato giuridico, i rischi ambientali e le prospettive di redditività di un bene immobiliare prima di un\'acquisizione o vendita. Include anche l\'analisi di contratti di locazione, oneri e obblighi regolamentari.',
-                project_monitoring: 'Monitoraggio di progetti di ristrutturazione o costruzione',
-                project_monitoring_desc: 'I servizi includono la gestione del progetto, il coordinamento dei contraenti, il controllo dei costi e delle scadenze, nonché la conformità alle norme di costruzione e sicurezza, garantendo il successo dei progetti immobiliari.',
-                portfolio_optimization: 'Ottimizzazione del portafoglio immobiliare',
-                portfolio_optimization_desc: 'Esperti analizzano il portafoglio immobiliare esistente per identificare opportunità di miglioramento, come la vendita di beni sotto-performanti, l\'acquisizione di nuovi asset o la ristrutturazione per aumentare il valore locativo, diversificando i rischi.',
-                cross_border_tax: 'Fiscalità immobiliare transfrontaliera',
-                cross_border_tax_desc: 'Questo servizio offre consigli sulle implicazioni fiscali degli investimenti immobiliari internazionali, inclusi trattati fiscali, imposte sulle plusvalenze, diritti di successione e strategie di pianificazione fiscale transfrontaliera.',
-                passive_income: 'Impostazione di redditi passivi tramite locazione',
-                passive_income_desc: 'I servizi includono l\'identificazione di beni immobiliari che generano redditi locativi stabili, la gestione dei contratti di locazione, la selezione degli inquilini e l\'ottimizzazione dei rendimenti, permettendo di creare flussi di reddito passivi per l\'investitore.',
-                hospitality_sector: 'Settore alberghiero & para-alberghiero',
-                margin_optimization: 'Ottimizzazione dei margini e dell\'occupazione',
-                margin_optimization_desc: 'Questo servizio utilizza tecniche di revenue management e strumenti di analisi predittiva per massimizzare i ricavi per camera disponibile (RevPAR). Questo include: Segmentazione fine della clientela per adattare le offerte tariffarie, Gestione dinamica dei prezzi secondo la domanda e la stagionalità, Formazione delle squadre di vendita alla gestione proattiva delle prenotazioni. Obiettivo: migliorare in modo sostenibile la redditività e l\'efficienza commerciale.',
-                compliance: 'Messa in conformità (sicurezza, norme alberghiere)',
-                compliance_desc: 'Un audit completo viene condotto sulle installazioni e procedure dell\'establishment per garantire la conformità con: Norme di sicurezza antincendio, igiene e accessibilità, Regolamentazione locale sul lavoro, assicurazioni, protezione dei dati, Norme specifiche per etichette alberghiere (es.: Swiss Quality, Relais & Châteaux). Il servizio include anche l\'accompagnamento nelle procedure amministrative e aggiornamenti regolari secondo le evoluzioni legali.',
-                economic_security: 'Sicurezza economica & intelligence aziendale',
-                background_checks: 'Verifica antecedenti (persone e imprese)',
-                background_checks_desc: 'Questa prestazione mira a limitare i rischi di reputazione o frode prima di una partnership, assunzione o acquisizione. Questo include: Ricerca di contenziosi passati, casellari giudiziali, sanzioni, Valutazione della stabilità finanziaria, Analisi della presenza digitale, relazioni d\'affari e storia professionale. È particolarmente utile per investimenti internazionali in mercati a bassa trasparenza.',
-                fraud_prevention: 'Prevenzione delle frodi',
-                fraud_prevention_desc: 'Il servizio consiste in: Implementare controlli interni solidi, Mappare i rischi di frode (interni o esterni), Formare le squadre sui segnali di allerta e sulle buone pratiche, Implementare sistemi di segnalazione e audit preventivi. Obiettivo: proteggere l\'azienda da appropriazioni indebite, truffe o corruzione.',
-                reputation_investigations: 'Indagini su reputazione e solvibilità',
-                reputation_investigations_desc: 'Queste indagini permettono di verificare l\'integrità e la solidità finanziaria di un partner o target di acquisizione. Includono: Analisi di solvibilità (punteggio di credito, debiti, pagamenti fornitori), Indagine sulla reputazione (stampa, social network, fonti locali), Interviste di verifica con terzi fidati. Risultato: una decisione sicura, basata su fatti concreti.',
-                pre_acquisition_due_diligence: 'Due diligence pre-acquisizione',
-                pre_acquisition_due_diligence_desc: 'La due diligence approfondita copre gli aspetti giuridici, finanziari, operativi, fiscali, HR e commerciali di un\'azienda target: Analisi di contratti, contenziosi, asset, debiti e impegni, Valutazione delle performance passate e proiezioni, Raccomandazioni su valutazione e aggiustamenti da negoziare. Scopo: evitare sorprese post-acquisizione e aggiustare il prezzo o le clausole contrattuali.',
-                information_protection: 'Strategia di protezione delle informazioni',
-                information_protection_desc: 'Di fronte a minacce crescenti (attacchi cyber, spionaggio industriale, fughe interne), questo servizio permette: Audit dei sistemi informativi, Implementazione di protocolli di cybersecurity (crittografia, accessi restringi, backup), Sensibilizzazione del personale alla sicurezza digitale, Gestione di crisi in caso di violazione dei dati.',
-                international_mobility: 'Mobilità internazionale & supporto agli espatriati',
-                non_resident_companies: 'Creazione di società per non residenti',
-                non_resident_companies_desc: 'Questo servizio aiuta imprenditori e investitori stranieri a creare entità legali (Sàrl, SA, succursali) in un paese terzo, con: Analisi fiscale comparativa (paese d\'origine vs. paese d\'impianto), Gestione delle procedure amministrative e bancarie, Registrazione presso autorità fiscali e sociali.',
-                international_entrepreneurs_advice: 'Consulenza agli imprenditori internazionali',
-                international_entrepreneurs_advice_desc: 'Un accompagnamento strategico è proposto per: Definire una struttura giuridica e fiscale ottimale, Comprendere le obbligazioni contabili, doganali, sociali locali, Accedere a reti di partner affidabili (avocati, notai, banchieri), Navigare le regolazioni internazionali (embargo, compliance, IVA intracomunitaria...).',
-                cross_border_wealth: 'Gestione patrimoniale transfrontaliera',
-                cross_border_wealth_desc: 'Famiglie e imprenditori che possiedono asset in più paesi possono beneficiare di: Strategie di ottimizzazione fiscale e successoria, Coordinazione tra notai e fiscalisti di diversi paesi, Strutturazione via holdings, fondazioni, trusts o contratti matrimoniali adattati ai contesti bilaterali.',
-                relocation_support: 'Accompagnamento all\'installazione (visa, alloggio, fiscalità)',
-                relocation_support_desc: 'Un supporto personalizzato è offerto a chiunque desideri espatriare: Aiuto per ottenere visa, permessi di soggiorno e lavoro, Ricerca di alloggi, scuole, sanità, Pianificazione fiscale prima della partenza e dopo l\'arrivo (domiciliazione, convenzione di non doppia imposizione, imposta sul patrimonio...), Assistenza all\'apertura di conti, sottoscrizione di assicurazioni, ecc.',
-                sustainable_development: 'Sviluppo sostenibile & etica aziendale',
-                esg_integration: 'Integrazione di criteri ESG',
-                esg_integration_desc: 'Le aziende sono accompagnate nell\'integrazione di criteri Ambientali, Sociali e di Governance nella loro strategia: Diagnosi ESG, Identificazione di rischi e opportunità sostenibili, Implementazione di indicatori di monitoraggio e reporting ESG per investitori o partner.',
-                csr_diagnosis: 'Diagnosi RSE',
-                csr_diagnosis_desc: 'Un audit RSE (Responsabilità Sociale d\'Impresa) è realizzato per misurare la performance sociale e ambientale dell\'azienda: Analisi delle politiche HR, ambientali, etiche, Benchmark settoriale, Piano d\'azione per migliorare l\'impatto positivo e rafforzare l\'immagine del marchio.',
-                sustainable_policies: 'Implementazione di politiche sostenibili',
-                sustainable_policies_desc: 'Questo include la definizione di una strategia di sostenibilità allineata con i valori dell\'azienda e le aspettative del mercato: Politica di acquisto responsabile, Riduzione dell\'impronta carbonica, Gestione dei rifiuti, mobilità sostenibile, ecc.',
-                certification_support: 'Accompagnamento alle certificazioni (etichette ecologiche, ecc.)',
-                certification_support_desc: 'Le aziende che desiderano ottenere etichette o certificazioni possono essere accompagnate: ISO 14001 (ambiente), ISO 26000 (RSE), B Corp, EcoEntreprise, ecc., Preparazione agli audit di certificazione, Formazione delle squadre alle norme e requisiti.',
-                contact_us: 'Contattateci',
-                contact_info: 'GTGEST SARL<br>1963 Vétroz<br>Email: <a href="mailto:info@gtgest.ch">info@gtgest.ch</a><br>Telefono: +41 79 626 57 63',
-                rights: 'Tutti i diritti riservati.',
-                back_top: 'Torna su'
+                logo: "GTGEST SARL",
+                nav_why: "Perché noi", nav_services: "Servizi", nav_process: "Processo", nav_about: "Chi siamo", nav_contact: "Contatti",
+                hero_title: "Il partner strategico di cui la tua organizzazione ha bisogno",
+                hero_subtitle: "Gestione patrimoniale, consulenza finanziaria, immobiliare, sicurezza economica e mobilità internazionale.",
+                hero_cta: "Richiedi un colloquio",
+                why_title: "Perché scegliere GTGEST SARL?",
+                why1: "Expertise Svizzera", why1_desc: "Conoscenza approfondita delle normative svizzere e internazionali.",
+                why2: "Approccio Strategico", why2_desc: "Soluzioni su misura per ottimizzare performance e redditività.",
+                why3: "Rete Internazionale", why3_desc: "Partner affidabili in diversi paesi.",
+                services_title: "I nostri Servizi",
+                service1: "Gestione Strategica", service1_desc: "Diagnosi, ottimizzazione processi, creazione e ristrutturazione società.",
+                service2: "Consulenza Finanziaria e Contabile", service2_desc: "Contabilità, analisi fiscale, previsioni e consolidamento.",
+                service3: "Immobiliare e Attivi", service3_desc: "Due diligence, ottimizzazione portafoglio, monitoraggio progetti.",
+                service4: "Settore Alberghiero", service4_desc: "Ottimizzazione margini, conformità e revenue management.",
+                service5: "Sicurezza Economica", service5_desc: "Due diligence, prevenzione frodi, verifiche antecedenti.",
+                service6: "Mobilità Internazionale", service6_desc: "Creazione società per non residenti e accompagnamento espatriati.",
+                process_title: "Il Nostro Processo",
+                step1: "Analisi approfondita della situazione e obiettivi",
+                step2: "Proposta di strategia su misura",
+                step3: "Implementazione e coordinamento",
+                step4: "Monitoraggio regolare e ottimizzazione continua",
+                step5: "Accompagnamento a lungo termine",
+                about_title: "Chi siamo",
+                about_desc: "Con sede a Vétroz, GTGEST SARL è il tuo partner di fiducia per la gestione strategica e ottimizzazione patrimoniale.",
+                about_text: "Combiniamo rigore svizzero, expertise internazionale e approccio umano.",
+                contact_title: "Contattaci",
+                email_label: "Email", phone_label: "Telefono",
+                response: "Risposta garantita entro 24 ore",
+                cta_title: "Pronto ad agire?",
+                cta_sub: "Un progetto? Una domanda strategica? Siamo a tua disposizione.",
+                cta_btn: "Prenota un appuntamento",
+                footer: "© 2026 GTGEST SARL — Tutti i diritti riservati."
             }
         };
 
-        const languageSelect = document.getElementById('language-select');
-
-        languageSelect.addEventListener('change', (e) => {
-            const lang = e.target.value;
+        function changeLanguage() {
+            const lang = document.getElementById('language-select').value;
             document.documentElement.lang = lang;
             document.querySelectorAll('[data-lang]').forEach(el => {
-                const key = el.dataset.lang;
-                if (translations[lang][key]) {
+                const key = el.getAttribute('data-lang');
+                if (translations[lang] && translations[lang][key]) {
                     el.innerHTML = translations[lang][key];
                 }
             });
-            document.title = `${translations[lang].welcome} - ${translations[lang].partner}`;
+        }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('header')) {
+                document.getElementById('navLinks').classList.remove('active');
+            }
         });
 
-        // Initialisation au chargement
-        languageSelect.dispatchEvent(new Event('change'));
+        // Initialisation
+        window.onload = () => {
+            changeLanguage();
+        };
     </script>
 </body>
-
 </html>
